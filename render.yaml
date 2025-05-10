@@ -3,7 +3,7 @@ services:
     name: tehnomarket
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn wsgi:application
+    startCommand: python wsgi.py && sleep 10 && gunicorn wsgi:application
     envVars:
       - key: FLASK_ENV
         value: production
